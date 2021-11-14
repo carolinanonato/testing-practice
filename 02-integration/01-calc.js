@@ -8,6 +8,9 @@ function calc(op, number1, number2) {
   function difference(number1 = 0, number2 = 0) {
   return number1 - number2;
   }
+  function product(number1 = 0, number2 = 1) {
+  return number1 * number2;
+  }
 
   switch(op){
     case 'add': 
@@ -15,6 +18,9 @@ function calc(op, number1, number2) {
 
     case 'subtract':
     return difference(number1-number2);
+
+    case 'multiply':
+    return product(number1*number2);
   }
 }
 // ==================================================
@@ -38,7 +44,8 @@ try {
   // Test Case 3
   // --------------------------------------------------
   // It should return the correct product when the user provides: 'multiply', 9, 9.
-
+  var result = calc('multiply', 9, 9);
+  if (result !== 81) throw new Error(`Expected calc(multiply, 9, 9) to be 81. Received: ` + result);
   // --------------------------------------------------
   // Test Case 4
   // --------------------------------------------------
