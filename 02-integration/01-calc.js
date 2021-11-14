@@ -14,7 +14,7 @@ function calc(op, number1, number2) {
   function quotient (number1 = 0, number2 = 1) {
   return number1 / number2;
   }
-  
+
   switch(op){
     case 'add': 
     return sum(number1+number2);
@@ -27,6 +27,9 @@ function calc(op, number1, number2) {
 
     case 'divide':
     return quotient(number1/number2);
+
+    default:
+    return 'Operation not supported';
   }
 }
 // ==================================================
@@ -65,7 +68,10 @@ try {
   // Test Case 5
   // --------------------------------------------------
   // It should return the message 'Operation not supported.' when the user provides: exponent, 2, 8.
-
+  var result = calc('exponent', 2, 8);
+  if (result !== 'Operation not supported') throw new Error('Expected calc(exponent, 2, 8) to be Operation not supported.' + result);
+ 
+ 
   console.log('All tests passed successfully.');
 
 // ==================================================
