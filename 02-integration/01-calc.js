@@ -4,12 +4,18 @@
 function calc(op, number1, number2) {
   function sum(number1 = 0, number2 = 0) {
   return number1 + number2;
-}
+  }
+  function difference(number1 = 0, number2 = 0) {
+  return number1 - number2;
+  }
 
-switch(op){
-  case 'add': 
-  return sum(number1+number2);
-}
+  switch(op){
+    case 'add': 
+    return sum(number1+number2);
+
+    case 'subtract':
+    return difference(number1-number2);
+  }
 }
 // ==================================================
 // DEFINE AND EXECUTE TEST CASES
@@ -26,7 +32,8 @@ try {
   // Test Case 2
   // --------------------------------------------------
   // It should return the correct difference when the user provides: 'subtract', 20, 10.
-
+  var result = calc('subtract', 20, 10);
+  if (result !== 10) throw new Error(`Expected calc(subtract, 20, 10) to be 10. Received: ` + result);
   // --------------------------------------------------
   // Test Case 3
   // --------------------------------------------------
