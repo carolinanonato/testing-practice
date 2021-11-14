@@ -11,7 +11,10 @@ function calc(op, number1, number2) {
   function product(number1 = 0, number2 = 1) {
   return number1 * number2;
   }
-
+  function quotient (number1 = 0, number2 = 1) {
+  return number1 / number2;
+  }
+  
   switch(op){
     case 'add': 
     return sum(number1+number2);
@@ -21,6 +24,9 @@ function calc(op, number1, number2) {
 
     case 'multiply':
     return product(number1*number2);
+
+    case 'divide':
+    return quotient(number1/number2);
   }
 }
 // ==================================================
@@ -40,16 +46,20 @@ try {
   // It should return the correct difference when the user provides: 'subtract', 20, 10.
   var result = calc('subtract', 20, 10);
   if (result !== 10) throw new Error(`Expected calc(subtract, 20, 10) to be 10. Received: ` + result);
+
   // --------------------------------------------------
   // Test Case 3
   // --------------------------------------------------
   // It should return the correct product when the user provides: 'multiply', 9, 9.
   var result = calc('multiply', 9, 9);
   if (result !== 81) throw new Error(`Expected calc(multiply, 9, 9) to be 81. Received: ` + result);
+
   // --------------------------------------------------
   // Test Case 4
   // --------------------------------------------------
   // It should return the correct quotient when the user provides: 'divide', 9, 3.
+  var result = calc('divide', 9, 3);
+  if (result !==3) throw new Error(`Expected calc(divide, 9, 3) to be 3. Recieved: ` + result); 
 
   // --------------------------------------------------
   // Test Case 5
